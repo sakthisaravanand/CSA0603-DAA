@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main(){
+	int n,i,j,temp;
+	printf("Enter the size of the array: ");
+	scanf("%d",&n);
+	int arr[n];
+	printf("Enter the elements: ");
+	for(i=0;i<n;i++){
+		scanf("%d",&arr[i]);
+	}
+	for(i=0;i<n-1;i++){
+		for(j=0;j<n-i-1;j++){
+			if(arr[j]>arr[j+1]){
+				temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+		}
+	}
+	for(i=0;i<n;i++){
+		printf("%d ",arr[i]);
+	}
+	int key,low=0,high=n-1,mid;
+	printf("Enter the key element: ");
+	scanf("%d",&key);
+	while(low<=high){
+		mid=(low+high)/2;
+		if(arr[mid]==key){
+			printf("element is found at: %d\n",mid);
+			return 0;
+		} else if(arr[mid<key]){
+			low=mid+1;
+		} else{
+			high=mid-1;
+		}
+	}
+	printf("Element not found\n!!");
+	return 0;
+}
