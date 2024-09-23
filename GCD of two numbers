@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+	int a,b,gcd;
+	printf("Enter the first number: ");
+	scanf("%d",&a);
+	printf("Enter the second number: ");
+	scanf("%d",&b);
+	if(a<0){
+		printf("give +ve number");
+	} else if(b<0){
+		printf("give +ve number");
+	} else{
+		while(a!=b){
+			if(a>b){
+				a=a-b;
+			} else{
+				b=b-a;
+			}
+		}
+		gcd=a;
+		printf("the gcd of two numbers is: %d",gcd);
+	}
+	return 0;
+}
