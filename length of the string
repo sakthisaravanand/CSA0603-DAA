@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+	char str[100];
+	int l=0;
+	printf("Enter the stirng: ");
+	scanf("%s",str);
+	while(str[l]!='\0'){
+		l++;
+	}
+	printf("The lenght of the string is: %d",l);
+	return 0;
+}
