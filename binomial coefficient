@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int n, k;
+    printf("Enter the values of n and k: ");
+    scanf("%d %d", &n, &k);
+
+    
+    int C[n+1][k+1];
+    
+   
+    for (int i = 0; i <= n; i++) {
+        for (int j = 0; j <= (i < k ? i : k); j++) {
+           
+            if (j == 0 || j == i) {
+                C[i][j] = 1;
+            }
+           
+            else {
+                C[i][j] = C[i-1][j-1] + C[i-1][j];
+            }
+        }
+    }
+
+    printf("R.Babu Eshwar-192211778\n");
+    printf("Binomial Coefficient C(%d, %d) = %d\n", n, k, C[n][k]);
+
+    return 0;
+}
